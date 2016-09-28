@@ -1,9 +1,9 @@
-export class Yugioh {
+export default class Yugioh {
   constructor() {
     console.log('Yugioh command loaded.');
   }
 
-  search() {
+  test() {
     console.log('Wut?!');
   }
 }

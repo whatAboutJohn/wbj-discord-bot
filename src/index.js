@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 // Run: babel-node .
 
-'use strict';
-
-import Commands from './commands';
 import bot from './Bot';
+import Commands from './commands/index';
 
-const Module = {};
-
-Commands.map(Klass => {
-  Module[Klass.name] = new Klass();
-});
+const commands = new Commands();
+console.log(commands);
