@@ -1,9 +1,10 @@
 const fs = require('fs');
 
 function files() {
-  let files = fs.readdirSync('./src/commands');
-  files = files.filter(file => /^(?!index).+\.js$/i.test(file));
-  files = files.map(file => file.slice(0, -3));
+  let files = fs.readdirSync('./src/commands')
+    .filter(file => /^(?!index).+\.js$/i.test(file))
+    .map(file => file.slice(0, -3));
+
   return files;
 }
 

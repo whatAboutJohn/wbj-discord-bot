@@ -5,4 +5,5 @@ import bot from './Bot';
 import Commands from './commands/index';
 
 const commands = new Commands();
-console.log(commands);
+
+bot();

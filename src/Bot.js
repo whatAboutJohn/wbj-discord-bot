@@ -2,7 +2,7 @@ import Discord from 'discord.js';
 import _ from 'lodash';
 import request from 'request';
 
-export default (() => {
+export default () => {
   const bot = new Discord.Client();
   const token = 'MjI3Mjk3OTQ4NTY2ODE0NzIx.CsJNLg.GZaM5wG4_-s5SM30oGey6iV74L8';
 
@@ -45,4 +45,4 @@ export default (() => {
   });
 
   bot.login(token);
-})()
+};
