@@ -4,8 +4,8 @@
   "description": "",
   "main": "./src/index",
   "scripts": {
-    "test": "babel-node ./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha -- --ui bdd -R spec -t 5000 --compilers js:babel-core/register",
-    "build": "babel server.js -o compiled.js"
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register",
+    "build": "babel src/**/*.js -o compiled.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +13,8 @@
     "discord.js": "^9.2.0",
     "dnode": "^1.2.2",
     "lodash": "^4.16.0",
-    "request": "^2.75.0"
+    "request": "^2.75.0",
+    "ytdl-core": "^0.7.18"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",

@@ -15,4 +15,8 @@ export default class {
       this[file] = new Klass();
     });
   }
+
+  delegateMessage(message) {
+    console.log(this);
+  }
 }

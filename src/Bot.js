@@ -1,6 +1,10 @@
 import Discord from 'discord.js';
 import _ from 'lodash';
 import request from 'request';
+import yt from 'ytdl-core';
+import Commands from './commands/index.js';
+
+const commands = new Commands();
 
 export default () => {
   const bot = new Discord.Client();
@@ -14,7 +18,12 @@ export default () => {
     let isBot = message.mentions.users.filter(u => u.username === 'test-bot');
 
     if (!_.isEmpty(isBot)) {
-      let ygoCommand = new RegExp('(ygo)(\\s{1}.+)');
+      // commands.delegateMessage({ message });
+
+      let ygoCommand = new RegExp('(Yugioh) (.+)');
+      let cmd = message.content.match(ygoCommand)[1];
+      let msg = message.content.match(ygoCommand)[2];
+      console.log(`Command ${cmd}; Message ${msg}`);
 
       if (ygoCommand.test(message.content)) {
         let cardName = message.content.match(ygoCommand)[2].trim();
@@ -40,6 +49,21 @@ export default () => {
             message.channel.sendMessage('Card not found.');
           }
         });
+      } else if (message.content.includes('What is the square root of 2 to the negative 9 plus 3 power?')) {
+        message.channel.sendMessage('I\'m a bot, not a nerd, nerd.');
+      } else if (message.content.includes('++play')) {
+        const voiceChannel = message.member.voiceChannel;
+        if (!voiceChannel) {
+          return message.reply(`Please be in a voice channel first!`);
+        }
+        voiceChannel.join()
+          .then(connnection => {
+            let stream = yt("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {audioonly: true});
+            const dispatcher = connnection.playStream(stream);
+            dispatcher.on('end', () => {
+              voiceChannel.leave();
+            });
+          });
       }
     }
   });
