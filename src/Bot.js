@@ -1,8 +1,11 @@
 import Discord from 'discord.js';
+import env from 'dotenv';
+
+env.config();
 
 export default () => {
   const bot = new Discord.Client();
-  const token = 'MjI3Mjk3OTQ4NTY2ODE0NzIx.CsJNLg.GZaM5wG4_-s5SM30oGey6iV74L8';
+  const token = process.env.DISCORD_TOKEN;
 
   bot.on('ready', () => {
     console.log('Bot ready');
