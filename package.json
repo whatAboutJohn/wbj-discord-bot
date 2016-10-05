@@ -7,7 +7,8 @@
   "scripts": {
     "test": "blue-tape -r babel-register src/**/*-spec.js | tap-spec",
     "build": "babel src/**/*.js -o compiled.js",
-    "check": "npm-check"
+    "check": "npm-check || true",
+    "lint": "eslint src || true"
   },
   "author": "",
   "license": "ISC",
