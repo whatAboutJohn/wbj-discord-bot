@@ -11,5 +11,5 @@ export default () => {
     console.log('Bot ready');
   });
 
-  return bot.login(token).then(() => bot).catch(console.log);
+  return bot.login(token);
 };

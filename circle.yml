@@ -1,12 +1,11 @@
 machine:
   node:
-    version: 0.10.34
+    version: 6.6.0
 
 test:
   override:
-    - npm run audit
     - npm run check
-    - npm outdated --depth 0
     - npm run lint
+    - npm outdated --depth 0
     - npm test
     - npm run build
