@@ -1,9 +1,7 @@
 ## TODO
 
----
-
-Tasks | Status
-- | :-:
+| Tasks | Status |
+--- | :---:
 *Implement basic testing via testem with mocha* | ✅
 *Class pattern style for modules* | ✅
 *Add CircleCI* |
