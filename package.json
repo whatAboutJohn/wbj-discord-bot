@@ -5,7 +5,7 @@
   "private": true,
   "main": "./src/index",
   "scripts": {
-    "test": "blue-tape -r babel-register tests/**/*.js | tap-spec",
+    "test": "blue-tape -r babel-register src/**/*-spec.js | tap-spec",
     "build": "babel src/**/*.js -o compiled.js",
     "check": "npm-check"
   },
