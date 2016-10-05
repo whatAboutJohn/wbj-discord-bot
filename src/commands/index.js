@@ -1,18 +1,9 @@
-const fs = require('fs');
-
-function files() {
-  let files = fs.readdirSync('./src/commands')
-    .filter(file => /^(?!index).+\.js$/i.test(file))
-    .map(file => file.slice(0, -3));
-
-  return files;
-}
+import fs from 'fs';
+import { readDir } from '../util/index';
 
 export default class {
   static loadModules(bot) {
-    console.log(typeof bot);
-
-    let modules = files().map(file => {
+    let modules = readDir('./src/commands').map(file => {
       let klass = require(`./${file}`).default;
       return this[file] = new klass(bot);
     });
