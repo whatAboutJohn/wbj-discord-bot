@@ -12,3 +12,7 @@ Tasks | Status
 *Add eslint* | ✅
 *Add Docker* |
 *Pipe commands through stream events* |
+*Spotify command* |
+*RevX command* |
+*Init bot first and reference as promise to other classes* | ✅
+*Add [urban dictionary](https://market.mashape.com/community/urban-dictionary) command* |

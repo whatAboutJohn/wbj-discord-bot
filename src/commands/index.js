@@ -9,11 +9,15 @@ function files() {
 }
 
 export default class {
-  constructor() {
-    files().map(file => {
-      const Klass = require(`./${file}`).default;
-      this[file] = new Klass();
+  static loadModules(bot) {
+    console.log(typeof bot);
+
+    let modules = files().map(file => {
+      let klass = require(`./${file}`).default;
+      return this[file] = new klass(bot);
     });
+
+    return Promise.all(modules);
   }
 
   delegateMessage(message) {

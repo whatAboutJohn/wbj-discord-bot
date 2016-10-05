@@ -2,6 +2,7 @@
   "name": "discord-bot",
   "version": "0.0.1",
   "description": "",
+  "private": true,
   "main": "./src/index",
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel-register",
@@ -11,9 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^9.2.0",
-    "dnode": "^1.2.2",
     "lodash": "^4.16.0",
-    "request": "^2.75.0",
+    "restify": "^4.1.1",
     "ytdl-core": "^0.7.18"
   },
   "devDependencies": {
@@ -25,5 +25,10 @@
   },
   "_requiredBy": [
     "/"
-  ]
+  ],
+  "config": {
+      "blanket": {
+        "pattern": "test"
+      }
+    }
 }

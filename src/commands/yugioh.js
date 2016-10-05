@@ -1,5 +1,5 @@
 export default class Yugioh {
-  constructor() {
+  constructor(bot) {
     console.log('Yugioh command loaded.');
   }
 
