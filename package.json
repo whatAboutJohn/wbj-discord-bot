@@ -2,7 +2,6 @@
   "name": "discord-bot",
   "version": "0.1.0",
   "description": "",
-  "private": true,
   "main": "./src/index",
   "scripts": {
     "test": "blue-tape -r babel-register src/**/*-spec.js | tap-spec",
@@ -10,8 +9,12 @@
     "check": "npm-check || true",
     "lint": "eslint src || true"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "WhatAboutJohn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whatAboutJohn/wbj-discord-bot.git"
+  },
   "dependencies": {
     "discord.js": "^9.2.0",
     "lodash": "^4.16.0",
