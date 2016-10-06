@@ -10,8 +10,4 @@ export default class {
 
     return Promise.all(modules);
   }
-
-  delegateMessage(message) {
-    console.log(this);
-  }
 }

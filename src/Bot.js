@@ -3,13 +3,15 @@ import env from 'dotenv';
 
 env.config();
 
-export default () => {
-  const bot = new Discord.Client();
-  const token = process.env.DISCORD_TOKEN;
+export default {
+  login() {
+    const bot = new Discord.Client();
+    const token = process.env.DISCORD_TOKEN;
 
-  bot.on('ready', () => {
-    console.log('Bot ready');
-  });
+    bot.on('ready', () => {
+      console.log('Bot ready');
+    });
 
-  return bot.login(token);
+    return bot.login(token);
+  }
 };
