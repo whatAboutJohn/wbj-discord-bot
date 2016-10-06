@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/whatAboutJohn/wbj-discord-bot/tree/dev.svg?style=svg)](https://circleci.com/gh/whatAboutJohn/wbj-discord-bot/tree/dev)
+
 ## TODO
 
 | Tasks | Status |
