@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-import yt from 'ytdl-core';
 import Bot from './Bot';
 import Commands from './commands/index.js';
 

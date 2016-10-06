@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { readDir } from '../util/index';
 
 export default class {
