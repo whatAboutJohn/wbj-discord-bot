@@ -7,6 +7,5 @@ Bot.login().then(bot => {
   console.log('Delegating bot to commands...');
   Commands.loadModules(bot).then(promise => {
     console.log('Modules loaded.');
-    console.log(promise);
   });
 }).catch(console.log);
