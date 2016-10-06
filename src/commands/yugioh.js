@@ -7,10 +7,10 @@ env.config();
 export default class Yugioh {
   constructor(bot) {
     this.bot = bot;
-    this.bot.on('message', message => this._handleMessage(message , this));
+    this.bot.on('message', message => this._handleMessage(message));
   }
 
-  _handleMessage(message, self) {
+  _handleMessage(message, self = this) {
     let isBot = message.mentions.users.filter(u => u.username === process.env.BOT_NAME);
 
     if (!_.isEmpty(isBot) && !_.isEmpty(message.content)) {
