@@ -1,4 +1,4 @@
-import test from 'blue-tape';
+import { test } from '../../spec-helper';
 import Yugioh from '../Yugioh';
 import _ from 'lodash';
 

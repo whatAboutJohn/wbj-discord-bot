@@ -1,4 +1,4 @@
-import test from 'blue-tape';
+import { test } from '../../spec-helper';
 import { Client } from 'discord.js';
 import Commands from '../index';
 
