@@ -1,6 +1,6 @@
 import test from 'blue-tape';
 import { Client } from 'discord.js';
-import Commands from './index';
+import Commands from '../index';
 
 const bot = new Client();
 
