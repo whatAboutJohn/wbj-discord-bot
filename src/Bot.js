@@ -1,7 +1,5 @@
 import Discord from 'discord.js';
-import env from 'dotenv';
-
-env.config();
+import env from './environments';
 
 export default {
   login() {

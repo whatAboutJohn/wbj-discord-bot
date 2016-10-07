@@ -1,8 +1,6 @@
-import env from 'dotenv';
+import env from '../environments';
 import request from 'request';
 import _ from 'lodash';
-
-env.config();
 
 export default class Yugioh {
   constructor(bot) {
@@ -11,7 +9,7 @@ export default class Yugioh {
   }
 
   _handleMessage(message, self = this) {
-    let isBot = message.mentions.users.filter(u => u.username === process.env.BOT_NAME);
+    let isBot = message.mentions.users.filter(u => u.username === env.BOT_NAME);
 
     if (!_.isEmpty(isBot) && !_.isEmpty(message.content)) {
       let compose = self._compose(message.content);
