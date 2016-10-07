@@ -1,30 +1,9 @@
-import env from '../environments';
 import request from 'request';
 import _ from 'lodash';
 
 export default class Yugioh {
   constructor(bot) {
     this.bot = bot;
-    this.bot.on('message', message => this._handleMessage(message));
-  }
-
-  _handleMessage(message, self = this) {
-    let isBot = message.mentions.users.filter(u => u.username === env.BOT_NAME);
-
-    if (!_.isEmpty(isBot) && !_.isEmpty(message.content)) {
-      let compose = self._compose(message.content);
-      this._delegate(compose, message);
-    }
-  }
-
-  _compose(message) {
-    let regex = new RegExp('(yugioh)\\s{1}(\\S+)\\s{1}(.+)');
-    let [,id, cmd, msg] = message.match(regex);
-    return { id, cmd, msg };
-  }
-
-  _delegate(compose, message) {
-    this[`command:${compose.cmd}`](compose, message);
   }
 
   ['command:info'](compose, message) {
