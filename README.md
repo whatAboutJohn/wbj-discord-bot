@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/whatAboutJohn/wbj-discord-bot/tree/dev.svg?style=svg)](https://circleci.com/gh/whatAboutJohn/wbj-discord-bot/tree/dev)
-
+![Dependencies](https://david-dm.org/whatAboutJohn/wbj-discord-bot.svg)
 ## TODO
 
 | Tasks | Status |
@@ -11,7 +11,6 @@
 *Enforce uniqueness with Set before loading modules* |
 *Add eslint* | ✅
 *Add Docker* |
-*Pipe commands through stream events* |
 *Spotify command* |
 *RevX command* |
 *Init bot first and reference as promise to other classes* | ✅

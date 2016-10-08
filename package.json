@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/index",
   "scripts": {
-    "test": "blue-tape -r babel-register src/**/*-spec.js | tap-spec",
+    "test": "blue-tape -r babel-register src/**/*-spec.js | tap-spec || true",
     "build": "babel src/**/*.js -o compiled.js",
     "check": "npm-check || true",
     "lint": "eslint src || true"
