@@ -6,7 +6,7 @@ export default class Youtube {
   ['command:play'](compose, message) {
     const voiceChannel = message.member.voiceChannel;
 
-    if (!voiceChannel) return message.reply('Please be in a voice channel first!');
+    if (!voiceChannel) return message.reply('Join voice channel first.');
 
     voiceChannel.join().then(connnection => {
       let stream = yt(compose.msg, { audioonly: true });
