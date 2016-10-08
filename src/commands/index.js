@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 export default class {
   constructor(bot) {
+    let self = this;
     this.bot = bot;
 
     let modules = readDir('./src/commands').map(file => {
@@ -11,8 +12,10 @@ export default class {
       return this[file] = new klass(bot);
     });
 
-    this.registerEvents;
-    return Promise.all(modules);
+    return Promise.all(modules).then(resolve => {
+      this.registerEvents;
+      return self;
+    });
   }
 
   get registerEvents() {
@@ -33,7 +36,7 @@ export default class {
 
   compose(message) {
     let regex = new RegExp(/(\S+)\s{1}(\S+)\s{1}(\S+)\s{1}(.+)/);
-    let [,,id, cmd, msg] = message.match(regex);
+    let [,, id, cmd, msg] = message.match(regex);
     return { id, cmd, msg };
   }
 

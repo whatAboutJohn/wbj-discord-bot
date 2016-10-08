@@ -1,6 +1,7 @@
 import { test } from '../../spec-helper';
 import { Client } from 'discord.js';
-import C from '../index';
+import Commands from '../index';
+import _ from 'lodash';
 
 const bot = new Client();
 
@@ -9,13 +10,11 @@ test('Load bot', function(t) {
   t.end();
 });
 
-test('Should load all command modules', (t) => {
-  t.equal(typeof C.loadModules(bot), 'object', 'Returns array of modules.');
-  t.end();
-});
+const C = new Commands(bot).then(c => {
 
-test('Should return { id, cmd, msg }.', (t) => {
-  let compose = C.compose('yugioh commandName cardName');
-  t.ok(_.has(compose, 'id', 'cmd', 'msg'));
-  t.end();
+  test('Should return { id, cmd, msg }.', (t) => {
+    let compose = c.compose('<@bot-id> yugioh commandName cardName');
+    t.ok(_.has(compose, 'id', 'cmd', 'msg'));
+    t.end();
+  });
 });
