@@ -10,8 +10,7 @@ test('Load bot', function(t) {
   t.end();
 });
 
-const C = new Commands(bot).then(c => {
-
+new Commands(bot).then(c => {
   test('Should return { id, cmd, msg }.', (t) => {
     let compose = c.compose('<@bot-id> yugioh commandName cardName');
     t.ok(_.has(compose, 'id', 'cmd', 'msg'));

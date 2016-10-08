@@ -12,7 +12,7 @@ export default class {
       return this[file] = new klass(bot);
     });
 
-    return Promise.all(modules).then(resolve => {
+    return Promise.all(modules).then(() => {
       this.registerEvents;
       return self;
     });

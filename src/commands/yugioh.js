@@ -2,8 +2,7 @@ import request from 'request';
 import _ from 'lodash';
 
 export default class Yugioh {
-  constructor(bot) {
-    this.bot = bot;
+  constructor() {
   }
 
   ['command:info'](compose, message) {
